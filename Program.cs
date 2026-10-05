@@ -7,9 +7,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowHtmlSite", policy =>
     {
-        policy.WithOrigins("https://scam-reporter-client-production.up.railway.app/") 
+        policy.WithOrigins("https://scam-reporter-client-production.up.railway.app") 
               .WithMethods("GET", "POST")
-              .WithHeaders("Content-Type");
+              .WithHeaders("Content-Type", "Authorization");
     });
 });
 
