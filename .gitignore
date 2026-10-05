@@ -1,0 +1,48 @@
+# Build output
+bin/
+obj/
+
+# SQLite database
+*.db
+*.db-shm
+*.db-wal
+
+# Local secrets/config
+appsettings.Development.json
+.env
+.env.*
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local database
+*.db
+*.db-shm
+*.db-wal
+
+# User-specific configuration
+appsettings.Development.json
+
+# Environment / secrets
+.env
+.env.*
+
+# Test results
+TestResults/
