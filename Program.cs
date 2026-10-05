@@ -2,7 +2,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ScamDb>(opt => opt.UseInMemoryDatabase("ScamList"));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowHtmlSite", policy =>
+    {
+        policy.WithOrigins("https://scam-reporter-client-production.up.railway.app/") 
+              .WithMethods("GET", "POST")
+              .WithHeaders("Content-Type");
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowHtmlSite");
 
 // May implement dev/prod envs in the future
 // if (app.Environment.IsDevelopment())
